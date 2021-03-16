@@ -4,8 +4,8 @@
 
 <p align="center">
   <a href="#Tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#how-to-use">How To Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#Creator">Creator</a>
+  <a href="#how-to-use">Como vizualizar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#Creator">Criador</a>
 </p>
 
 Preview
@@ -29,10 +29,10 @@ Preview
 
 
 
-See on git.io
+Veja o site no Netlify
 --------
-##### Access the project directly from the web
-
+##### Projeto web
+https://empire-web.netlify.app/
 
 
 
@@ -48,22 +48,22 @@ Tecnologias
 - React Router Dom
 
 
-How To Use
+Como vizualizar
 -----------
 
 ```
-Access the project directly from the web
+Acesse o projeto web. 
+https://empire-web.netlify.app/
 
+Ou use o codigo no CMD e faça o clone do projeto.
+https://github.com/GabrielNatan/Empire.git
 
-
-or use the code below in the CMD and clone the project
-
-
+** Digite "npm start" no cmd para rodar o projeto 
 ```
 
 
 
-Creator
+Criador
 -----------
 
 

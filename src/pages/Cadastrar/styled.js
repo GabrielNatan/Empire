@@ -12,7 +12,7 @@ export const Container = styled.div`
     flex-direction:column;
     p{
         margin-bottom:10px;
-        color: red;
+       
     }
     .cont{
         width:100%;
@@ -45,6 +45,7 @@ export const Container = styled.div`
         a{
             text-decoration: none; 
             color #222;
+            font-size:0.8rem;
         }
     }
 `

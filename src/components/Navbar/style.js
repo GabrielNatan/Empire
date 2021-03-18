@@ -18,6 +18,7 @@ export const Container =  styled.div`
             color: #222;
         }
         h1{
+            font-size:1.4rem;
             font-family: 'Kaushan Script', cursive;
             opacity:0;
             animation: right 300ms linear forwards;
@@ -33,7 +34,8 @@ export const Container =  styled.div`
         animation: left 300ms linear forwards;
         
         a{
-            padding:10px;
+            padding:10px 5px;
+            font-size:.9rem;
             text-decoration:none;
             color:#222;
         }
@@ -63,7 +65,7 @@ export const Container =  styled.div`
             }
         }
         span{
-            padding: 15px;
+            padding: 10px 8px 0 ;
             cursor:pointer;
             text-decoration: none;
 
@@ -76,7 +78,7 @@ export const Container =  styled.div`
             width:16px;
             height:15px;
             top:8px;
-            right:53px;
+            right:${props=> props.logado ? '118px': '32px'};
             display:flex;
             justify-content:center;
             color:#FFF;
@@ -90,5 +92,8 @@ export const Container =  styled.div`
         }
     }
     
+    @media(min-width: 764px) {
+        
+    }
 
 `

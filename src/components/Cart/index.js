@@ -10,8 +10,13 @@ export default function Cart(){
     const cardList = useSelector(state=>state.addCart.cart)
     const cardList2 = useSelector(state=>state.addCart.subtotal)
     const [quant,setQuant] = useState(1)
+    const [deslogado, setDeslogado] = useState(true)
     const [subtotal,setSubTotal] = useState(0)
     const dispatch = useDispatch()
+
+    useEffect(()=>{
+        localStorage.getItem('logado') &&  setDeslogado(false)
+    },[])
 
     const handleAdd = (item)=>{
         dispatch({type:"ADD_CART",payload:{cart:[item]}})
@@ -76,7 +81,7 @@ export default function Cart(){
                             <strong>Desconto (10%): <span>{((cardList2 * 10)/100).toFixed(2)}</span></strong>
                             <strong>Total: {(cardList2 - ((cardList2 * 10)/100).toFixed(2)).toFixed(2)}</strong>
 
-                            <Link onClick={()=> dispatch({type:'CART_CLOSE'})} to="/cart">Fechar compra</Link>
+                            <Link onClick={()=> dispatch({type:'CART_CLOSE'})} to={deslogado ? "/login" : "/cart"}>Fechar compra</Link>
                         </>
                         :
                         <>

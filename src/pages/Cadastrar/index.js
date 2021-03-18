@@ -32,7 +32,7 @@ export default function LoginScreen(){
                 <input onChange={(e)=>{setFields({...fields,password:e.target.value})}} type="password" placeholder="**********"/>
                 <input onChange={(e)=>{setFields({...fields,passwordConfirm:e.target.value})}} type="password" placeholder="**********"/>
                 <button onClick={(e)=>register(fields)} >Entrar</button>
-                <Link to="/login">Deseja realizar login</Link>
+                <Link to="/login">Deseja realizar login?</Link>
             </div>
 
         </Container>

@@ -34,14 +34,14 @@ export default function LoginScreen(){
 
     return(
         <Container>
-            <div className="cont">
                 {msg}
+            <div className="cont">
             <Link className="iconArrow" to="/"><FaArrowLeft/></Link>
                 <h1>Login</h1>
                 <input onChange={(e)=>setFields({...fields,email:e.target.value})} type="email" placeholder="Digite seu email..."/>
                 <input onChange={(e)=>setFields({...fields,password:e.target.value})} type="password" placeholder="**********"/>
                 <button onClick={()=>handleLogin(fields)}>Entrar</button>
-                <Link to="/cadastrar">Deseja se cadastrar</Link>
+                <Link to="/cadastrar">Deseja se cadastrar?</Link>
             </div>
 
         </Container>

@@ -10,7 +10,7 @@ export default function Banner(){
                 <div className="container flex">
                     <div className="title">
                         <h2>Nike</h2>
-                        <h1>Camiseta Nike Masculino</h1>
+                        <h1>Camiseta Nike - Preta</h1>
                         <p>Camiseta masculina Sportswear. A camiseta Nike Sportswear apresenta um escudo brilhante que celebra a diversidade do esporte.</p>
                         <Link to="/produto/3">Ver produto</Link>
                     </div>

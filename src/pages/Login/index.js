@@ -2,10 +2,12 @@ import React,{ useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { Container } from './styled'
 import { FaArrowLeft } from 'react-icons/fa'
+import { useDispatch, useSelector } from 'react-redux'
 export default function LoginScreen(){
     const [fields,setFields] = useState({})
     const [msg,setMsg] = useState()
-
+    const logado = useSelector(state=> state.userLogado.logado)
+    const dispatch = useDispatch()
     const history = useHistory()
 
     const handleLogin = (fieldsRes)=>{
@@ -24,6 +26,7 @@ export default function LoginScreen(){
             setMsg("Email ou Password invalido!")
             return
         }
+        dispatch({type:"LOGAR"})
 
         setMsg("Login realizado com sucesso!")
         localStorage.setItem('logado',JSON.stringify(user))

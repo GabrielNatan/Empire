@@ -16,12 +16,17 @@ export default function Navbar(){
     const cardList = useSelector(state=>state.addCart.cart)
 
     useEffect(()=>{
+        if(localStorage.getItem('logado')){
+            console.log("aaaa")
+            dispatch({type:"LOGAR"})
+            
+        }
         localStorage.getItem('logado') &&  setDeslogado(false)
-
     },[deslogado])
     const logout = ()=>{
         localStorage.removeItem("logado")
         setDeslogado(true)
+        dispatch({type:"DESLOGAR"})
     }
 
     return( 

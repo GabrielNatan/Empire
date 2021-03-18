@@ -11,12 +11,21 @@ export default function Cart(){
     const cardList2 = useSelector(state=>state.addCart.subtotal)
     const [quant,setQuant] = useState(1)
     const [deslogado, setDeslogado] = useState(true)
+    const logado = useSelector(state=> state.userLogado.logado)
     const [subtotal,setSubTotal] = useState(0)
     const dispatch = useDispatch()
 
     useEffect(()=>{
-        localStorage.getItem('logado') &&  setDeslogado(false)
-    },[])
+        if(localStorage.getItem('logado')){
+            console.log("bbbbb")
+            dispatch({type:"LOGAR"})
+            
+        }else{
+            dispatch({type:"DESLOGAR"})
+        }
+        logado ? setDeslogado(false) : setDeslogado(true)
+        //localStorage.getItem('logado') &&  setDeslogado(false)
+    },[deslogado,logado])
 
     const handleAdd = (item)=>{
         dispatch({type:"ADD_CART",payload:{cart:[item]}})

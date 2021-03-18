@@ -93,7 +93,13 @@ export const Container =  styled.div`
     }
     
     @media(min-width: 764px) {
-        
+        .logo{
+            
+            h1{
+                font-size:2rem;
+         
+            }
+        }
     }
 
 `

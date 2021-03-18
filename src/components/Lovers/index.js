@@ -27,7 +27,7 @@ export default function Lovers(){
         <>
             <Container lovers={lovers}>
             <RiCloseCircleFill  onClick={()=>dispatch({type:"LOVERS_CLOSE"})} className="close" size="30px"/>
-            <h1>Favoritos</h1>
+            <h1>Favoritos {loversRedux.length > 0 && `(${loversRedux.length})`}</h1>
 
             <div className="contItens">
                 <ul>

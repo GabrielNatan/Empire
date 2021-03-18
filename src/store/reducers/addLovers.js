@@ -3,7 +3,13 @@ const initialState = {
   };
   export const addLoversReducer = (state = initialState, action) => {
     let a = action.payload
-    
+
+    if(state.cart.length === 0){
+      if(localStorage.getItem("lovers")){
+        state = JSON.parse(localStorage.getItem("lovers"))
+         
+        }
+    }
     switch (action.type) {
       case 'ADD_LOVERS':
         let verifyAndAdd = false;
@@ -15,9 +21,9 @@ const initialState = {
         })
 
         if(verifyAndAdd){
-          console.log(state)
           return {...state}
         }
+        localStorage.setItem("lovers",JSON.stringify({...state,cart:[...state.cart,a.cart[0]]}))
 
         return { 
               ...state,
@@ -33,6 +39,8 @@ const initialState = {
         }
         
         let newState  = state.cart.filter(isBigEnough)
+        localStorage.setItem("lovers",JSON.stringify({...state,cart:newState}))
+
         return {
           ...state,
           cart:newState

@@ -5,7 +5,7 @@ const initialState = {
   export const notificationReducer = (state = initialState, action) => {
     switch (action.type) {
       case 'NOTIFICATION_OPEN':
-        console.log( action.payload.message)
+        
         return {
           ...state,
           open: true,

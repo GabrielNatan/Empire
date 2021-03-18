@@ -45,7 +45,7 @@ export default function Cart(){
     return(
         <Container cart={cart}>
             <RiCloseCircleFill onClick={()=> dispatch({type:'CART_CLOSE'})} className="close" size="30px"/>
-            <h1>Carrinho</h1>
+            <h1>Carrinho {cardList.length > 0 && `(${cardList.length})`}</h1>
 
             <div className="contItens">
                 <ul>

@@ -15,13 +15,13 @@ export default function Card({id,name, image,numeric,desc, price}){
 
         useEffect(()=>{
             let loversVerify = loversRedux.filter((item)=> {return item.id === id })
-            console.log("ccc")
+            
 
             if(loversRedux.length === 0 || loversVerify.length  === 0 ){
-                    console.log("aaaaa")
+                    
                     setLovers(false)
                 }else if(loversVerify.length  > 0){
-                    console.log("bbbb")
+                   
                     setLovers(true)
                 }
         },[loversRedux])

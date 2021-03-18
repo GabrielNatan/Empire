@@ -7,8 +7,16 @@ const initialState = {
     let subtotal = [];    
     let reducer = (acc,newacc)=>{return acc + newacc}
 
+    if(state.cart.length === 0){
+      if(localStorage.getItem("cart")){
+        state = JSON.parse(localStorage.getItem("cart"))
+         
+        }
+    }
     switch (action.type) {
       case 'ADD_CART':
+
+
         let verifyAndAdd = false;
          state.cart.map(item=>{
            if(item.id === a.cart[0].id) {
@@ -32,16 +40,19 @@ const initialState = {
         }
     
         if(verifyAndAdd){
+          localStorage.setItem("cart",JSON.stringify({...state,subtotal:subtotal[0]}))
           return {...state,subtotal:subtotal[0]}
         }
 
         if(state.cart.length === 0){
+          localStorage.setItem("cart",JSON.stringify({ ...state,cart:[...state.cart,a.cart[0]],subtotal:  Number(subtotal  + a.cart[0].price)} ))
           return { 
             ...state,
             cart:[...state.cart,a.cart[0]],
             subtotal:  Number(subtotal  + a.cart[0].price)
           };  
         }else{
+          localStorage.setItem('cart', JSON.stringify({...state,cart:[...state.cart,a.cart[0]],subtotal: Number(subtotal[0] + a.cart[0].price)}))
           return { 
             ...state,
             cart:[...state.cart,a.cart[0]],
@@ -79,6 +90,7 @@ const initialState = {
         
         }
 
+        localStorage.setItem('cart', JSON.stringify({...state,subtotal:subtotal[0]}))
         return {
           ...state,
           subtotal:subtotal[0]
@@ -87,6 +99,7 @@ const initialState = {
         break
         case 'REMOVE_All':
           state.cart = []
+          localStorage.setItem('cart', JSON.stringify({...state,subtotal:0}))
           return state  
         break
       default:
